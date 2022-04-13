@@ -6,30 +6,37 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SalesWebMVC.Controllers {
-    public class HomeController : Controller {
-        public IActionResult Index() {
+namespace SalesWebMVC.Controllers
+{
+    public class HomeController : Controller
+    {
+        public IActionResult Index()
+        {
             return View();
         }
 
-        public IActionResult About() {
+        public IActionResult About()
+        {
             ViewData["Message"] = "Sales Web MVC App from C# Course";
-   
+
             return View();
         }
 
-        public IActionResult Contact() {
+        public IActionResult Contact()
+        {
             ViewData["Message"] = "Your contact page.";
 
             return View();
         }
 
-        public IActionResult Privacy() {
+        public IActionResult Privacy()
+        {
             return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error() {
+        public IActionResult Error()
+        {
             return View(new SalesWebMVC.Models.ViewModels.ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
