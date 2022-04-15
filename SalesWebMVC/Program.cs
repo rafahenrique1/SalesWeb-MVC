@@ -8,9 +8,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SalesWebMVC {
-    public class Program {
-        public static void Main(string[] args) {
+namespace SalesWebMVC
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
             CreateWebHostBuilder(args).Build().Run();
         }
 
