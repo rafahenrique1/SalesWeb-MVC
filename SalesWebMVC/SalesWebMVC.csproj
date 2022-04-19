@@ -12,6 +12,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\Sellers\HomeController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="Controllers\Component.razor" />
     <Content Remove="Controllers\_ViewImports.cshtml" />
   </ItemGroup>
