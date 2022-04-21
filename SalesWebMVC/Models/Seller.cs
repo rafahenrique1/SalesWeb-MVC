@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SalesWebMVC.Models
+namespace SalesWebMvc.Models
 {
     public class Seller
     {
@@ -29,20 +29,19 @@ namespace SalesWebMVC.Models
             Department = department;
         }
 
-        public void AddSales(SalesRecord obj)
+        public void AddSales(SalesRecord sales)
         {
-            Sales.Add(obj);
+            Sales.Add(sales);
         }
 
-        public void RemoveSales(SalesRecord obj)
+        public void RemoveSales(SalesRecord sales)
         {
-            Sales.Remove(obj);
+            Sales.Remove(sales);
         }
 
         public double TotalSales(DateTime initial, DateTime final)
         {
-            return Sales.Where(obj => obj.Date >= initial && obj.Date <= final)
-                .Sum(sales => sales.Amount);
+            return Sales.Where(sales => sales.Date >= initial && sales.Date <= final).Sum(sales => sales.Amount);
         }
     }
 }

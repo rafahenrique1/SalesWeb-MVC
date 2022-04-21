@@ -1,11 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SalesWebMVC.Models;
 
-namespace SalesWebMVC.Data
+namespace SalesWebMvc.Models
 {
-    public class SalesWebMVCContext : DbContext
+    public class SalesWebMvcContext : DbContext
     {
-        public SalesWebMVCContext (DbContextOptions<SalesWebMVCContext> options)
+        public SalesWebMvcContext (DbContextOptions<SalesWebMvcContext> options)
             : base(options)
         {
         }

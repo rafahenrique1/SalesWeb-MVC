@@ -1,7 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+﻿using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
+using SalesWebMvc.Models.ViewModels;
 
-namespace SalesWebMVC.Controllers
+namespace SalesWebMvc.Controllers
 {
     public class HomeController : Controller
     {
@@ -12,7 +13,7 @@ namespace SalesWebMVC.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Sales Web MVC App from C# Course";
+            ViewData["Message"] = "Salles Web MVC App from C# Course";
 
             return View();
         }
@@ -32,7 +33,7 @@ namespace SalesWebMVC.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new SalesWebMVC.Models.ViewModels.ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
