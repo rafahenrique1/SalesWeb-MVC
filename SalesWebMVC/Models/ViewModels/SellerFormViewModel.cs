@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SalesWebMVC.Models.ViewModels
+namespace SalesWebMvc.Models.ViewModels
 {
     public class SellerFormViewModel
     {

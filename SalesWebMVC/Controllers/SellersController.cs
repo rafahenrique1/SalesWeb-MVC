@@ -1,11 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using SalesWebMVC.Models;
-using SalesWebMVC.Models.ViewModels;
-using SalesWebMVC.Services;
-using SalesWebMVC.Services.Exceptions;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using SalesWebMvc.Models;
+using SalesWebMvc.Models.ViewModels;
+using SalesWebMvc.Services;
+using SalesWebMvc.Services.Exceptions;
 
-namespace SalesWebMVC.Controllers
+namespace SalesWebMvc.Controllers
 {
     public class SellersController : Controller
     {
@@ -47,7 +50,6 @@ namespace SalesWebMVC.Controllers
             }
 
             var obj = _sellerService.FindById(id.Value);
-
             if (obj == null)
             {
                 return NotFound();
@@ -72,7 +74,6 @@ namespace SalesWebMVC.Controllers
             }
 
             var obj = _sellerService.FindById(id.Value);
-
             if (obj == null)
             {
                 return NotFound();
@@ -89,7 +90,6 @@ namespace SalesWebMVC.Controllers
             }
 
             var obj = _sellerService.FindById(id.Value);
-
             if (obj == null)
             {
                 return NotFound();
@@ -97,22 +97,20 @@ namespace SalesWebMVC.Controllers
 
             List<Department> departments = _departmentService.FindAll();
             SellerFormViewModel viewModel = new SellerFormViewModel { Seller = obj, Departments = departments };
-
             return View(viewModel);
-        }
+        } 
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, Seller obj)
+        public IActionResult Edit(int id, Seller seller)
         {
-            if (id != obj.Id)
+            if (id != seller.Id)
             {
                 return BadRequest();
             }
-
             try
             {
-                _sellerService.Update(obj);
+                _sellerService.Update(seller);
                 return RedirectToAction(nameof(Index));
             }
             catch (NotFoundException)

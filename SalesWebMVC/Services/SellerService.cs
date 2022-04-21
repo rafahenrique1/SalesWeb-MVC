@@ -1,17 +1,18 @@
-﻿using SalesWebMVC.Data;
-using SalesWebMVC.Models;
+﻿using SalesWebMvc.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using SalesWebMVC.Services.Exceptions;
+using SalesWebMvc.Services.Exceptions;
 
-namespace SalesWebMVC.Services
+namespace SalesWebMvc.Services
 {
     public class SellerService
     {
-        private readonly SalesWebMVCContext _context;
+        private readonly SalesWebMvcContext _context;
 
-        public SellerService(SalesWebMVCContext context)
+        public SellerService(SalesWebMvcContext context)
         {
             _context = context;
         }
@@ -45,7 +46,6 @@ namespace SalesWebMVC.Services
             {
                 throw new NotFoundException("Id not found");
             }
-
             try
             {
                 _context.Update(obj);

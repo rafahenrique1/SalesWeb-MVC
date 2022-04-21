@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SalesWebMVC.Models
+namespace SalesWebMvc.Models
 {
     public class Department
     {
@@ -20,14 +20,14 @@ namespace SalesWebMVC.Models
             Name = name;
         }
 
-        public void AddSeller(Seller obj)
+        public void AddSeller(Seller seller)
         {
-            Sellers.Add(obj);
+            Sellers.Add(seller);
         }
 
         public double TotalSales(DateTime initial, DateTime final)
         {
-            return Sellers.Sum(obj => obj.TotalSales(initial, final));
+            return Sellers.Sum(seller => seller.TotalSales(initial, final));
         }
     }
 }
